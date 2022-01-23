@@ -10,13 +10,13 @@ Just follow the tutorial...
 
 1. In a Web browser, visit http://cs144.keithw.org/hello, and you will see like this:
 
-![image-20210928195735587](.\lab0.assets\image-20210928195735587.png)
+![image-20210928195735587](./lab0.assets/image-20210928195735587.png)
 
 2. Now, on your VM.
 
 (a) Run `telnet cs144.keithw.org http`, you will see:
 
-![image-20210928195952482](.\lab0.assets\image-20210928195952482.png)
+![image-20210928195952482](./lab0.assets/image-20210928195952482.png)
 
 (b) Type `GET /hello HTTP/1.1`
 
@@ -24,7 +24,7 @@ Just follow the tutorial...
 
 (d) Type enter
 
-![image-20210929194238077](.\lab0.assets\image-20210929194238077.png)
+![image-20210929194238077](./lab0.assets/image-20210929194238077.png)
 
 3. Assignment
 
@@ -40,21 +40,21 @@ I have no SUNet ID...
 
 client:
 
-![image-20210928202813277](.\lab0.assets\image-20210928202813277.png)
+![image-20210928202813277](./lab0.assets/image-20210928202813277.png)
 
 server:
 
-![image-20210928202833240](.\lab0.assets\image-20210928202833240.png)
+![image-20210928202833240](./lab0.assets/image-20210928202833240.png)
 
 (b) Type "Hello, world" in the netcat window, and you will see "Hello world" in the telnet window.
 
 server:
 
-![image-20210928203049230](.\lab0.assets\image-20210928203049230.png)
+![image-20210928203049230](./lab0.assets/image-20210928203049230.png)
 
 client:
 
-![image-20210928203103566](.\lab0.assets\image-20210928203103566.png)
+![image-20210928203103566](./lab0.assets/image-20210928203103566.png)
 
 ## 3. Writing a network program using an OS stream socket（easy）
 
@@ -84,7 +84,7 @@ Telnet means we should establish contact with a host. So the question is which h
 
 If you have read sponge documentation, you should be familiar with these functions. You may find that write() and read() are not member functions of the Socket class, but we can still call them, why?
 
-![image-20210929202223240](.\lab0.assets\image-20210929202223240.png)
+![image-20210929202223240](./lab0.assets/image-20210929202223240.png)
 
 This is the reason, they are subclasses of FileDescriptor. Strongly recommend you to read this [example](https://cs144.github.io/doc/lab0/class_t_c_p_socket.html) to understand how to use read() and write(). Note that in HTTP, each line must be ended with “\r\n” (it’s not sufficient to use just “\n” or endl). You have to call read repeatedly until the socket reaches “EOF” (end of file).
 
@@ -94,7 +94,7 @@ Remember to call the **shutdown** method of a TCPSocket!
 
 In this part, you need to implement an in-memory reliable byte stream. If you have learned about OS, you must be familiar with it, it is just a very simple pipe.
 
-![image-20211002173955567](.\lab0.assets\image-20211002173955567.png)
+![image-20211002173955567](./lab0.assets/image-20211002173955567.png)
 
 So from this image, you may understand what is a byte stream. A cache that stores data, the writer writes data from one end, and the reader reads data from the other end. To implement the cache, you need to choose a data structure,  **list**, **deque**, **queue**, even **vector**, all will be ok.
 
@@ -178,7 +178,7 @@ size_t ByteStream::remaining_capacity() const { return _capacity - _buffer.size(
 
 ## 5. run screenshot
 
-![image-20211002174706405](.\lab0.assets\image-20211002174706405.png)
+![image-20211002174706405](./lab0.assets/image-20211002174706405.png)
 
 
 
